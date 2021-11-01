@@ -8,7 +8,7 @@ Python snippets to preprocess the data
 
 Script that applies edge detection to the original training and test dataset images using the Sobel operator. Generates the processed training and test dataset images as `X_train_sobeled` and `X_test_sobeled` respectively.
 
-Contains the function `sobel(X_train, X_test)` that converts the image into a scipy imag and applies the Sobel edge detection kernel.
+Contains the function `sobel(X_train, X_test)` that converts the image into a scipy image and applies the Sobel edge detection kernel.
 
 Arguments:
 
