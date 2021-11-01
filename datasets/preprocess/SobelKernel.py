@@ -21,8 +21,12 @@ def sobel(X_train, X_test):
 
     # apply sobel filters to all train and test
     # note: for each image, we append the raw image data to the edge detection data
-    X_train_sobeled = list(map(lambda img: img + apply_sobel_filters(img), X_train))
-    X_test_sobeled = list(map(lambda img: img + apply_sobel_filters(img), X_test))
+    X_train_sobeled = list(map(apply_sobel_filters, X_train))
+    X_test_sobeled = list(map(apply_sobel_filters, X_test))
+    for i in range(len(X_train_sobeled)) :
+        X_train_sobeled[i] = np.concatenate((X_train[i], X_train_sobeled[i]))
+    for i in range(len(X_test_sobeled)) :
+        X_test_sobeled[i] = np.concatenate((X_test[i], X_test_sobeled[i]))
 
     return (X_train_sobeled, X_test_sobeled)
 
