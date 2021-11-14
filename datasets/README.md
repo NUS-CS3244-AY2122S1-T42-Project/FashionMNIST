@@ -4,6 +4,32 @@ Data sets are too large to be uploaded, please download them from [Fashion MNIST
 
 Python snippets to preprocess the data
 
+## Canny
+
+Script that applies edge detection to the original training and test dataset images using the skimage Canny filter. Generates the processed training and test dataset images as `X_train_cannied` and `X_test_cannied` respectively.
+
+Contains the function `canny(X_train, X_test)` that applies the Canny edge detection kernel.
+
+Arguments:
+
+- `X_train` - Training dataset
+- `X_test` - Test dataset
+
+Returns `(X_train_cannied, X_test_cannied)` where:
+
+- `X_train_cannied` is the transformed X_train
+- `X_test_cannied` is the transformed X_test
+
+Each transformed image consists of the edge detected image appended to the original image.
+
+Example usage:
+
+```
+from datasets.preprocess.Canny import canny
+
+X_train_cannied, X_test_cannied = canny(X_train, X_test)
+```
+
 ## SobelKernel
 
 Script that applies edge detection to the original training and test dataset images using the Sobel operator. Generates the processed training and test dataset images as `X_train_sobeled` and `X_test_sobeled` respectively.
